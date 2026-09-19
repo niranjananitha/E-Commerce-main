@@ -16,7 +16,9 @@ def create_app():
 
     from models.user import User
     from models.product import Product
+    from models.cart import Cart, CartItem
     from routes.products import products_bp
+    from routes.cart import cart_bp
     from routes.auth import auth_bp
 
     with app.app_context():
@@ -24,6 +26,7 @@ def create_app():
 
     app.register_blueprint(auth_bp)
     app.register_blueprint(products_bp)
+    app.register_blueprint(cart_bp)
 
     @app.route("/")
     def home():
