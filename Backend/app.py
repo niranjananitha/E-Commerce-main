@@ -17,6 +17,8 @@ def create_app():
     from models.user import User
     from models.product import Product
     from models.cart import Cart, CartItem
+    from models.order import Order
+    from models.order_item import OrderItem
     from routes.products import products_bp
     from routes.cart import cart_bp
     from routes.auth import auth_bp
